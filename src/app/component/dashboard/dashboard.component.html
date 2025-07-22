@@ -1,0 +1,30 @@
+
+<div class="container-fluid m-0 p-0">
+    <div class="row">
+        <div class="col-md-2 m-0 p-0">
+            <div class="navbar sticky-top  navbar-white  text-white nav">
+                <div>
+                    <ul class="navbar-nav ms-auto  text-start">
+                        <li class="nav-item "><a routerLink="/dashboard"
+                                class="nav-link fw-semibold fs-5 ">Home</a></li>
+                        <li class="nav-item "><a routerLink="/dashboard/userdetails"
+                                    class="nav-link fw-semibold fs-5">UserDetails</a>
+                            </li>
+                        <li class="nav-item "><a routerLink="/dashboard/add"
+                                class="nav-link fw-semibold fs-5">AddProducts</a></li>
+                        <li class="nav-item "><a routerLink="/dashboard/view"
+                                class="nav-link fw-semibold fs-5">ViewProducts</a>
+                        </li>
+                        <li class="nav-item "><a routerLink="/dashboard/manage" class="nav-link fw-semibold fs-5">ManageProducts</a></li>
+                        <li class="nav-item "><a routerLink="/dashboard" class="nav-link fw-semibold fs-5" (click)="Logout()">Logout</a></li>
+                          
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10 m-0 p-0">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,17 @@
+.nav {
+    background-color:black; /* Deep Navy #F4F7FA #07363c*/
+    color:white;
+    height:100vh;
+       
+  }
+  
+  .nav a {
+    color:white;
+    padding: 12px 16px;
+    text-decoration: none;
+    margin-left: 10px;
+  }
+  
+  .nav a:hover {
+    color: #00FFE7; /* Neon Aqua */
+  }

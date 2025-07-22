@@ -1,0 +1,65 @@
+
+<div class="container">
+    <div class="row mt-5" >
+        <div class="col-md-4 mb-3" *ngFor="let p of myproducts">
+            <div class="card shadow-lg rounded ">
+                <div class="card-header text-center">
+                    <img [src]="[p.img]" class="img-fluid images"  >
+                </div>
+                <div class="card-body">
+                    <h4>{{p.title}}</h4>
+                    <p>{{p.description}}</p>
+                    <p>Category: {{p.category}}</p>
+
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-info ms-5"  (click)="updateObj(p)" data-bs-target="#updateform" data-bs-toggle="modal">Edit</button>
+                    <button class="btn btn-danger ms-5" (click)="deleteNow(p.id)" >Delete</button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div *ngIf="newObj">
+        <div class="modal fade" id="updateform">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                            <h1>Update Form</h1>
+                    </div>
+                    <div class="modal-body">
+                        <form action="">
+            
+                            <div class="form-group mb-3">
+                                <label for="" class="form-label"><strong>Title</strong></label>
+                                <input type="text" class="form-control bordered shadow-lg  border-1 border-black" name="title" [(ngModel)]="newObj.title">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="" class="form-label"><strong>Description</strong></label>
+                                <input type="text" class="form-control bordered shadow-lg  border-1 border-black " name="description" [(ngModel)]="newObj.description">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="" class="form-label"><strong>Category</strong></label>
+                                <input type="text" class="form-control bordered shadow-lg  border-1 border-black" name="category" [(ngModel)]="newObj.category">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="" class="form-label"><strong>Image</strong></label>
+                                <input type="text" class="form-control bordered shadow-lg  border-1 border-black" name="img" [(ngModel)]="newObj.img">
+                            </div>
+                        </form>
+    
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-warning ms-5" type="submit" (click)="updateObject()" data-bs-dismiss="modal">Update</button>
+                        
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    
+
+    </div>
+</div>
+
