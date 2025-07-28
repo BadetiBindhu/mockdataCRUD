@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { CartService } from '../../cart.service';
 
 @Component({
   selector: 'app-userdashboard',
@@ -8,12 +9,11 @@ import Swal from 'sweetalert2';
   styleUrl: './userdashboard.component.css'
 })
 export class UserdashboardComponent {
-  len:any=0;
-  constructor(private r:Router){}
+  constructor(private r:Router,private sercart:CartService){}
   user:any;
   username:any;
   ngOnInit(){
-    if(localStorage.getItem("loggedIn")!=null){
+    if(localStorage.getItem("user")!=null){
     Swal.fire({
       title: "Good job!",
       text: "Welcome to Site!",
@@ -36,5 +36,11 @@ export class UserdashboardComponent {
   Logout(){
     localStorage.removeItem("loggedIn");
     this.r.navigateByUrl("");
+  }
+
+
+  length:any=0;
+  ngDoCheck(){
+    this.length=this.sercart.getCartLength();
   }
 }

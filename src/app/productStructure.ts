@@ -4,5 +4,5 @@ export class productstr{
     description:any;
     category:any;
     img:any;
-    
+    price:any;
 }

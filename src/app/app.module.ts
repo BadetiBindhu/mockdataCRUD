@@ -18,6 +18,10 @@ import { UserhomeComponent } from './component/userhome/userhome.component';
 import { UserviewComponent } from './component/userview/userview.component';
 import { UsercartComponent } from './component/usercart/usercart.component';
 import { UserdetailsComponent } from './component/userdetails/userdetails.component';
+import { DetailsPageComponent } from './component/details-page/details-page.component';
+import { ViewOrdersComponent } from './component/view-orders/view-orders.component';
+import { ViewAllOrdersComponent } from './component/view-all-orders/view-all-orders.component';
+import { ViewordersComponent } from './component/vieworders/vieworders.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +38,10 @@ import { UserdetailsComponent } from './component/userdetails/userdetails.compon
     UserviewComponent,
     UsercartComponent,
     UserdetailsComponent,
+    DetailsPageComponent,
+    ViewOrdersComponent,
+    ViewAllOrdersComponent,
+    ViewordersComponent,
   
   ],
   imports: [

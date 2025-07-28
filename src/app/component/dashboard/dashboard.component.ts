@@ -12,7 +12,7 @@ export class DashboardComponent {
   user:any;
   username:any;
   ngOnInit(){
-    if(localStorage.getItem("loggedIn")!=null){
+    if(localStorage.getItem("admin")!=null){
     Swal.fire({
       title: "Good job!",
       text: "Welcome to Site!",

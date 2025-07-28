@@ -17,7 +17,8 @@ export class AddProductsComponent {
         title:['',Validators.required],
         description:['',Validators.required],
         category:['',Validators.required],
-        img:['',Validators.required]
+        img:['',Validators.required],
+        price:['',Validators.required]
       }
     )
   }

@@ -11,6 +11,8 @@ import { UserhomeComponent } from './component/userhome/userhome.component';
 import { UserviewComponent } from './component/userview/userview.component';
 import { UsercartComponent } from './component/usercart/usercart.component';
 import { UserdetailsComponent } from './component/userdetails/userdetails.component';
+import { DetailsPageComponent } from './component/details-page/details-page.component';
+import { ViewordersComponent } from './component/vieworders/vieworders.component';
 const routes: Routes = [
   {path:"",component:LoginComponent},
   {path:"dashboard",component:DashboardComponent,
@@ -26,7 +28,9 @@ const routes: Routes = [
     children:[
       {path:'',component:UserhomeComponent},
       {path:'view',component:UserviewComponent},
-      {path:'cart',component:UsercartComponent}
+      {path:'cart',component:UsercartComponent},
+      {path:"details/:id",component:DetailsPageComponent},
+      {path:"vieworders",component:ViewordersComponent}
     ]
   }
 ];

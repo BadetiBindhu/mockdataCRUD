@@ -1,1 +1,33 @@
-<p>usercart works!</p>
+
+<div class="container">
+    <!-- <div class="row">
+        <div class="col-md-4">
+            <input type="text" [(ngModel)]="search" placeholder="searsch...">
+            <button (click)="filterme()">Search</button>
+        </div>
+    </div> -->
+    <div class="row mt-5" >
+        <div class="col-md-4 mb-3" *ngFor="let p of all">
+            <div class="card shadow-lg rounded ">
+                <div class="card-header text-center">
+                    <img [src]="[p.img]" class="img-fluid images"  >
+                </div>
+                <div class="card-body">
+                    <h4>{{p.title}}</h4>
+                    <p>{{p.description}}</p>
+                    <p>Category: {{p.category}}</p>
+                     <h5>Price:{{p.price}}</h5>
+                     <button class="btn btn-danger" (click)="removeCart(p.id)">Delete</button>
+                </div>
+                
+
+            </div>
+        </div>
+        <div class="row">
+            <hr>
+            <h1>Total:{{totalamout}}</h1>
+        </div>
+
+    </div>
+</div>
+

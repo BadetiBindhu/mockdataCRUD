@@ -1,0 +1,60 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <img [src]="obj.img" class="img-fluid w-75">
+        </div>
+        <div class="col-md-4">
+            <h3>{{obj.title}}</h3>
+            <p>{{obj.description}}</p>
+            <h5>{{obj.category}}</h5>
+            <h3>Price:{{obj.price}}</h3>
+            <button class="btn btn-warning ms-5" (click)="addNow()">Add To Cart</button>
+            <button class="btn btn-success ms-5" (click)="orderNow(obj)" data-bs-toggle="modal" data-bs-target="#orderform">Order Now</button>
+        </div>
+    </div>
+    <div *ngIf="proObj">
+        <div class="modal fade" id="orderform">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                            <img [src]="proObj.img" class="img-fluid" width="150" height="120">
+                    </div>
+                    <div class="modal-body">
+                        <form action="">
+            
+                            <div class="form-group mb-3">
+                                <label for="" class="form-label"><strong>ID</strong></label>
+                                <input type="text" class="form-control bordered shadow-lg  border-1 border-black" name="id" [(ngModel)]="proObj.id" disabled>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="" class="form-label"><strong>Title</strong></label>
+                                <input type="text" class="form-control bordered shadow-lg  border-1 border-black " name="title" [(ngModel)]="proObj.title" disabled>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="" class="form-label"><strong>Username</strong></label>
+                                <input type="text" class="form-control bordered shadow-lg  border-1 border-black" name="username" [(ngModel)]="username" disabled>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="" class="form-label"><strong>Address</strong></label>
+                                <input type="text" class="form-control bordered shadow-lg  border-1 border-black" name="address" [(ngModel)]="address">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="" class="form-label"><strong>Phone</strong></label>
+                                <input type="tel" class="form-control bordered shadow-lg  border-1 border-black" name="phone" [(ngModel)]="phone">
+                            </div>
+                        </form>
+    
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-warning ms-5"   data-bs-dismiss="modal" (click)="buyNow()">Buy Now</button>
+                        
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    
+
+    </div>
+
+</div>

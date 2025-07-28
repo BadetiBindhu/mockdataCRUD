@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { ProductserviceService } from '../../productservice.service';
+import { OrderServiceService } from '../../order-service.service';
 
 @Component({
   selector: 'app-login',
@@ -30,7 +31,7 @@ checkLogin(){
     text: "You clicked the button!",
     icon: "success"
   });
-  localStorage.setItem("loggedIn",JSON.stringify(this.formData.value));
+  localStorage.setItem("admin",JSON.stringify(this.formData.value));
   
   // alert("Login Successful"); 
   this.r.navigateByUrl('/dashboard');
@@ -42,7 +43,7 @@ checkLogin(){
    alert(this.result);
    console.log(this.service.users);
     this.r.navigateByUrl("/user");
-    localStorage.setItem("loggedIn",JSON.stringify(this.formData.value));
+    localStorage.setItem("user",JSON.stringify(this.formData.value));
   }
   else{
     Swal.fire({

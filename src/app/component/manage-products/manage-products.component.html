@@ -10,7 +10,7 @@
                     <h4>{{p.title}}</h4>
                     <p>{{p.description}}</p>
                     <p>Category: {{p.category}}</p>
-
+                     <h4>Price:{{p.price}}</h4>
                 </div>
                 <div class="card-footer">
                     <button class="btn btn-info ms-5"  (click)="updateObj(p)" data-bs-target="#updateform" data-bs-toggle="modal">Edit</button>
@@ -46,6 +46,10 @@
                             <div class="form-group mb-3">
                                 <label for="" class="form-label"><strong>Image</strong></label>
                                 <input type="text" class="form-control bordered shadow-lg  border-1 border-black" name="img" [(ngModel)]="newObj.img">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="" class="form-label"><strong>Price</strong></label>
+                                <input type="text" class="form-control bordered shadow-lg  border-1 border-black" name="price" [(ngModel)]="newObj.price">
                             </div>
                         </form>
     

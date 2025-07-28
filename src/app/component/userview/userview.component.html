@@ -1,32 +1,84 @@
 
-<div class="container">
-    <div class="row">
+<div class="container-fluid">
+    <div class="row mt-4">
         <div class="col-md-4">
             <input type="text" [(ngModel)]="search" placeholder="searsch...">
             <button (click)="filterme()">Search</button>
         </div>
+        <div class="col-md-4">
+            <select
+              id="categorySelect"
+              class="form-select"
+              [(ngModel)]="selectedCategory"
+              name="category"
+            (change)="selectedProducts()"
+            >
+              <option value="">-- Select Category--</option>
+              <option value="frontend">Frontend</option>
+              <option value="backend">Backend</option>
+              <option value="tool">Tools</option>
+              <option value="framework">Frameworks</option>
+            </select>
+           
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-warning" (click)="orderAll()" data-bs-toggle="modal" data-bs-target="#orderalll">Order All</button>
+        </div>
     </div>
+    
     <div class="row mt-5" >
         <div class="col-md-4 mb-3" *ngFor="let p of availpro">
-            <div class="card shadow-lg rounded ">
+           <a (click)="openDetail(p.id)">
+            <div class="card shadow-lg rounded " height="450">
                 <div class="card-header text-center">
-                    <img [src]="[p.img]" class="img-fluid images"  >
+                    <img [src]="[p.img]" class="img-fluid" width="120" height="250"  >
                 </div>
                 <div class="card-body">
                     <h4>{{p.title}}</h4>
                     <p>{{p.description}}</p>
                     <p>Category: {{p.category}}</p>
-
+                     <h5>Price:{{p.price}}</h5>
                 </div>
-                <div class="card-footer">
+                <!-- <div class="card-footer">
                     <button class="btn btn-warning">Add to Cart</button>
                     <button class="btn btn-secondary ms-5">Buy Now</button>
-                </div>
+                </div> -->
                 
 
             </div>
+           </a>
         </div>
 
+    </div>
+    <div *ngIf="orderall">
+        <div class="modal fade" id="orderalll">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <form action="">
+                            <div class="form-group mb-3">
+                                <label for="" class="form-label"><strong>Username</strong></label>
+                                <input type="text" class="form-control bordered shadow-lg  border-1 border-black" name="username" [(ngModel)]="username" disabled>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="" class="form-label"><strong>Address</strong></label>
+                                <input type="text" class="form-control bordered shadow-lg  border-1 border-black" name="address" [(ngModel)]="address">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="" class="form-label"><strong>Phone</strong></label>
+                                <input type="tel" class="form-control bordered shadow-lg  border-1 border-black" name="phone" [(ngModel)]="phone">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-warning ms-5"   data-bs-dismiss="modal" (click)="orderAllNow()">OrderAllNow</button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    
     </div>
 </div>
 

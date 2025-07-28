@@ -1,4 +1,3 @@
-
 <div class="container-fluid">
     <div class="row">
         <table class="table table-bordered table-striped">
@@ -11,7 +10,7 @@
                 <th>Address</th>
                 <th>Phone</th>
             </tr>
-           <tr *ngFor="let o of allorders">
+           <tr *ngFor="let o of uorders">
             <td>{{o.id}}</td>
             <td><img [src]="o.img" width="100" height="100"></td>
             <td>{{o.title}}</td>
